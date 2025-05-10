@@ -1,0 +1,15 @@
+uci del firewall.cfg01e63d.syn_flood
+uci set firewall.cfg01e63d.synflood_protect='1'
+uci set firewall.cfg01e63d.flow_offloading='1'
+uci set firewall.cfg01e63d.flow_offloading_hw='1'
+
+uci del firewall.cfg03dc81.network
+uci add_list firewall.cfg03dc81.network='wan'
+uci add_list firewall.cfg03dc81.network='wan6'
+uci add_list firewall.cfg03dc81.network='wwan0'
+
+uci set network.wwan0.auth='none'
+uci set network.wwan0.delay='60'
+
+uci set network.cfg070f15.ipv6='0'
+uci set network.cfg030f15.ipv6='0'
