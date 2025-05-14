@@ -8,8 +8,5 @@ uci add_list firewall.cfg03dc81.network='wan'
 uci add_list firewall.cfg03dc81.network='wan6'
 uci add_list firewall.cfg03dc81.network='wwan0'
 
-uci set network.wwan0.auth='none'
-uci set network.wwan0.delay='60'
-
 uci set network.cfg070f15.ipv6='0'
 uci set network.cfg030f15.ipv6='0'
