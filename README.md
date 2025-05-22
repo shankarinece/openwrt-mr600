@@ -13,6 +13,7 @@ In addition to the packages, I have included UCI default settings for
 - Add WWAN0 interface to WAN firewall. 
 - Delay the modem starting by 60s during booting.
 - Disable IPV6 for LAN and WWAN0 devices. 
+- Enable WLAN
 
 # Built images (v24.10.1)
 With these settings applied, I have built the image and available under [images](/images) directory. This can be used to flash the router.
