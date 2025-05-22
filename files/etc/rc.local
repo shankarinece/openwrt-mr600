@@ -1,0 +1,7 @@
+# Put your custom commands here that should be executed once
+# the system init finished. By default this file does nothing.
+echo "05c6 9025" > /sys/bus/usb-serial/drivers/option1/new_id
+sleep 5
+chmod +x 
+sh /etc/restart_wwan_interface.sh
+exit 0

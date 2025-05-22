@@ -1,3 +1,14 @@
+uci del system.ntp.enabled
+uci del system.ntp.enable_server
+uci set system.cfg01e48a.hostname='mr600v2'
+uci set system.cfg01e48a.zonename='Asia/Kolkata'
+uci set system.cfg01e48a.timezone='IST-5:30'
+uci set system.cfg01e48a.log_proto='udp'
+uci set system.cfg01e48a.conloglevel='8'
+uci set system.cfg01e48a.cronloglevel='7'
+
+uci set network.lan.ipaddr='10.11.12.13'
+
 uci del firewall.cfg01e63d.syn_flood
 uci set firewall.cfg01e63d.synflood_protect='1'
 uci set firewall.cfg01e63d.flow_offloading='1'
@@ -8,5 +19,29 @@ uci add_list firewall.cfg03dc81.network='wan'
 uci add_list firewall.cfg03dc81.network='wan6'
 uci add_list firewall.cfg03dc81.network='wwan0'
 
-uci set network.cfg070f15.ipv6='0'
+uci set network.cfg070f15.ipv6='0'  
 uci set network.cfg030f15.ipv6='0'
+
+
+
+uci del wireless.default_radio0
+uci del wireless.default_radio1
+uci del wireless.radio0.disabled
+uci set wireless.wifinet2=wifi-iface
+uci set wireless.wifinet2.device='radio0'
+uci set wireless.wifinet2.mode='ap'
+uci set wireless.wifinet2.ssid='TP-Link_xxxx'
+uci set wireless.wifinet2.encryption='psk2'
+uci set wireless.wifinet2.key='00001111'
+uci set wireless.wifinet2.network='lan'
+uci set wireless.radio0.channel='11'
+uci set wireless.radio0.cell_density='0'
+uci del wireless.radio1.disabled
+uci set wireless.wifinet3=wifi-iface
+uci set wireless.wifinet3.device='radio1'
+uci set wireless.wifinet3.mode='ap'
+uci set wireless.wifinet3.ssid='TP-Link_xxxx'
+uci set wireless.wifinet3.encryption='psk2'
+uci set wireless.wifinet3.key='00001111'
+uci set wireless.wifinet3.network='lan'
+uci set wireless.radio1.cell_density='0'
