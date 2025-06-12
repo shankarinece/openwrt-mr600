@@ -23,7 +23,7 @@ Required Items:
 1. Download all the files under [bin/targets/ramips/mt7621](/bin/targets/ramips/mt7621) directory. 
 2. [TFTP Server](https://tftpd64.software.informer.com/download/). Download and install the file `tftpd64-4.51-setup.exe`
 3. WinSCP or any SCP tool
-4. WiFi 5GHz fix files under
+4. WiFi 5GHz fix files under [wifi-fix](/wifi-fix)
 
 Rename the file `openwrt-ramips-mt7621-tplink_mr600-v2-eu-initramfs-kernel.bin` to `initramfs-kernel.bin`
 ## Installation procedure
