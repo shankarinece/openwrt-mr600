@@ -16,15 +16,16 @@ In addition to the packages, I have included UCI default settings for
 - Enable WLAN
 
 # Built images (v24.10.1)
-With these settings applied, I have built the image and available under [images](/images) directory. This can be used to flash the router.
+With these settings applied, I have built the image and available under [bin/targets/ramips/mt7621](/bin/targets/ramips/mt7621) directory. This can be used to flash the router.
 
 # Flashing the Router
 Required Items: 
-1. Download all the files under [images](/images) directory. 
+1. Download all the files under [bin/targets/ramips/mt7621](/bin/targets/ramips/mt7621) directory. 
 2. [TFTP Server](https://tftpd64.software.informer.com/download/). Download and install the file `tftpd64-4.51-setup.exe`
 3. WinSCP or any SCP tool
+4. WiFi 5GHz fix files under
 
-Rename the file ending `initramfs-kernel.bin` to `initramfs-kernel.bin`
+Rename the file `openwrt-ramips-mt7621-tplink_mr600-v2-eu-initramfs-kernel.bin` to `initramfs-kernel.bin`
 ## Installation procedure
 This applies for router running both `Factory Firmware` and `OpenWRT Firmware`
 
@@ -48,5 +49,11 @@ sysupgrade -v -n /tmp/openwrt-ramips-mt7621-tplink_mr600-v2-eu-squashfs-sysupgra
 15. Wait for the upgrade to complete on the router. 
 16. After complete, press `Enter` key to get the OpenWRT console. Reboot the router now.
 
-This is fairly straight forward process and I found it very stable. 
+# Fix for Wifi 5GHz instabilities
+1. Post installation of OpenWRT image, download the file [wifi-fix/mtd2.bin](/wifi-fix/mtd2.bin)
+2. Access Router via SSH and execute 'insmod mtd-rw i_want_a_brick=1'
+3. Upload the file mtd2.bin to the /tmp directory with some SCP tools such as WinSCP on Windows.
+4. Execute "mtd write /tmp/mtd2.bin radio" to write the radio file.
+5. Do a factory reset and reboot.
 
+This is fairly straight forward process and I found it very stable. 

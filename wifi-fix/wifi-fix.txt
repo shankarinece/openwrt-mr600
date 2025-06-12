@@ -1,0 +1,20 @@
+https://forum.openwrt.org/t/tp-link-archer-mr600-exploration/65489/140?page=4
+
+
+mtd2.bin is a copy of - https://drive.google.com/file/d/1C429ONvclQu7b8uFPTt2geBszGHcyLQ7/view?usp=sharing
+
+
+
+Here are the instructions:-
+
+    Make sure the package "kmod-mtd-rw" is installed
+    Access Router via SSH and execute insmod mtd-rw i_want_a_brick=1.
+    Upload the file to the /tmp directory with some SCP tools such as WinSCP on Windows.
+    Execute "mtd write /tmp/mtd2.bin radio" to write the radio file.
+    Do a factory reset and reboot.
+
+Enjoy!
+
+Credit goes to - @DragonBluep for the bin.
+
+Otherwise I was compiling proprietary drivers for our device(compilation for mt7603(2.4GHz) was successful).
