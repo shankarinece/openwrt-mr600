@@ -51,9 +51,15 @@ sysupgrade -v -n /tmp/openwrt-ramips-mt7621-tplink_mr600-v2-eu-squashfs-sysupgra
 
 # Fix for Wifi 5GHz instabilities
 1. Post installation of OpenWRT image, download the file [wifi-fix/mtd2.bin](/wifi-fix/mtd2.bin)
-2. Access Router via SSH and execute 'insmod mtd-rw i_want_a_brick=1'
+2. Access Router via SSH and execute `insmod mtd-rw i_want_a_brick=1`
 3. Upload the file mtd2.bin to the /tmp directory with some SCP tools such as WinSCP on Windows.
-4. Execute "mtd write /tmp/mtd2.bin radio" to write the radio file.
+4. Execute `mtd write /tmp/mtd2.bin radio` to write the radio file.
 5. Do a factory reset and reboot.
 
-This is fairly straight forward process and I found it very stable. 
+# Change LTE Band
+1. Access Router via SSH
+2. List the modem with `mmcli -L`
+3. See the details of the modem with `mmcli -m 0`. This should display the list of supported bands
+4. Run the command `mmcli -m 0 --set-current-bands='eutran-1|eutran-3'` to set the bands 1 and 3
+5. To List the SMS `mmcli -m 0 --messaging-list-sms`
+6. To read a specific SMS `mmcli -m 0 --sms <SMS>`. Example `mmcli -m 0 --sms 24`
