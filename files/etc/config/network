@@ -35,9 +35,8 @@ config device
 
 config interface 'wwan0'
         option proto 'modemmanager'
-        option iptype 'ipv4v6'
+        option iptype 'ipv4'
         option loglevel 'ERR'
         option device '/sys/devices/platform/1e1c0000.xhci/usb1/1-2'
-        option apn 'www'
-        list allowedauth 'pap'
-        list allowedauth 'chap'
+        list allowedauth 'none'
+        option allow_roaming '1'
